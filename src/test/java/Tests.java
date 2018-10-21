@@ -8,7 +8,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class msgMapTestPublic {
+public class Tests {
     @BeforeClass
     public static void setup(){
         User user1 = new User(new PositionPair(1.0, 1.0), "Ben", 10);
