@@ -1,5 +1,10 @@
 public class Map {
+    // creates a preset map with doubles: latitude and longitude
 
-    public void
+    public void main {
+
+    }
+
+    position
 
 }
