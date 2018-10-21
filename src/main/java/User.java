@@ -33,6 +33,19 @@ public class User {
     }
 
     public void printwarnings(int range){
+        List<Message> inRange = new ArrayList<>(geoMap.getMsgs(this.currentLocation, range));
+        Boolean haveWarnings = false;
 
+        for (int i = 0; i < inRange.size(); i++){
+            if (inRange.get(i).getTags().contains("#Warning")){
+                System.out.println("Warning: ");
+                System.out.println(inRange.get(i).toString());
+                haveWarnings = true;
+            }
+        }
+
+        if(haveWarnings == false){
+            System.out.println("No Warnings Nearby");
+        }
     }
 }
