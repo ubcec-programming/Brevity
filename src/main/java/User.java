@@ -1,15 +1,13 @@
 
 
 public class User {
-    private double longitude;
-    private double latitude;
+    private double PositionPair position;
     private String username;
     private int range;
 //    private List<Message> message=new ArrayList<>();
 
-    public User(double longitude, double latitude, String username, int range) {
-        this.longitude = longitude;
-        this.latitude = latitude;
+    public User(PositionPair position, String username, int range) {
+        this.position = position;
         this.username = username;
         this.range = range;
     }
