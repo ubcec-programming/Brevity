@@ -15,7 +15,7 @@ public class User {
         return currentLocation;
     }
 
-    public String getUsername() {
+    public String getUserName() {
         return username;
     }
 
