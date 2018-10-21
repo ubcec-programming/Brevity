@@ -17,6 +17,12 @@ public class Message {
 
     public PositionPair getPosition(){return position;}
 
+    public String toString (){
+        String result;
+        result = owner.getUserName() + ": " + "\n" + containt;
+        return result;
+    }
+
     private void getTags (){
         Scanner tagScanner = new Scanner(containt);
         String nextWord;
