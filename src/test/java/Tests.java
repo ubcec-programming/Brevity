@@ -30,11 +30,18 @@ public class Tests {
 
     @Test
     public void test3(){
-        user1.printMessages();
+        user2.moveTo(-20,-20);
+        user2.setRange(50);
+        user2.printMessages();
     }
 
     @Test
     public void test4(){
+        user1.printMessages();
+    }
+
+    @Test
+    public void test5(){
         user1.printWarnings();
     }
 
