@@ -10,7 +10,7 @@ public class Tests {
 
     @BeforeClass
     public static void setup(){
-        user1.newMessage("Hello!");
+        user1.newMessage("Hello world!");
         user1.moveTo(50,20);
         user1.newMessage("5.6 magnitude earthquake #Warning");
         user1.moveTo(50,25);
