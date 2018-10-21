@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ public class Message {
         this.containt = containt;
         this.position = position;
         this.owner = owner;
-        this.getTags();
+        this.storeTags();
     }
 
     public PositionPair getPosition(){return position;}
@@ -23,7 +24,10 @@ public class Message {
         return result;
     }
 
-    private void getTags (){
+    public List<String> getTags(){return new ArrayList<>(tags);}
+
+
+    private void storeTags (){
         Scanner tagScanner = new Scanner(containt);
         String nextWord;
 
