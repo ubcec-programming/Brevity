@@ -6,7 +6,7 @@ public class User {
     private String username;
 //    private List<Message> message=new ArrayList<>();
 
-    public User(PositionPair position, String username, int range) {
+    public User(PositionPair position, String username) {
         this.currentLocation = position;
         this.username = username;
     }
@@ -25,14 +25,18 @@ public class User {
 
     }
 
-    public void printMessages(int range){
+    public boolean printMessages(int range){
         List<Message> inRange = new ArrayList<>(geoMap.getMsgs(this.currentLocation, range));
         for (int i = 0; i < inRange.size(); i++){
             System.out.println(inRange.get(i).toString());
         }
+
+        if (inRange.size() > 0){
+            return true;
+        } else {return false;}
     }
 
-    public void printWarnings(int range){
+    public boolean printWarnings(int range){
         List<Message> inRange = new ArrayList<>(geoMap.getMsgs(this.currentLocation, range));
         Boolean haveWarnings = false;
 
@@ -46,6 +50,7 @@ public class User {
 
         if(haveWarnings == false){
             System.out.println("No Warnings Nearby");
-        }
+            return false;
+        } else {return true;}
     }
 }
