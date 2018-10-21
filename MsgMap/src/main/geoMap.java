@@ -1,9 +1,9 @@
-import java.lang.Object.android.location.Location;
 import java.util.ArrayList;
 
 public class geoMap {
     // creates a preset map with doubles: latitude and longitude
     public double latitude, longitude;
+    public PositionPair[] keyList;
 
     public static void main (String [] args){
         List<PositionPair> coordinates = new ArrayList<>();
@@ -24,24 +24,25 @@ public class geoMap {
     public void msgLocation(PositionPair coordinates, String message){
         Map<PositionPair, String> location = new HashMap<PositionPair, String>();
         location.put(coordinates, message);
+        keyList.add(coordinates);
     }
 
-    public String[] getMsgs(Location coordinates, int range){
-        //for ()
-        float distanceInMeters = coordinates.distanceTo(test);
-        boolean isWithinRange = distanceInMeters < range;
+    public String[] getMsgs(PositionPair user, int range){
 
-        float[] results = new float[1];
-        Location.distanceBetween(centerLatitude, centerLongitude, testLatitude, testLongitude, results);
-        float distanceInMeters = results[0];
-        boolean isWithin10km = distanceInMeters < 10000;
+        for (int x = 0; x < keyList.length; x++){
+            if (withinRange(user, keyList.get(x), range)){
+
+            }
+        }
 
     }
 
     private boolean withinRange(PositionPair user, PositionPair message, int range){
-        Math.sqrt((user.getLatitude() - message.getLatitude()) * (user.getLatitude() - message.getLatitude()) +
-                (user.getLongitude() - message.getLongitude()) * (user.getLatitude() - message.getLatitude());
-
+        double distance = Math.sqrt( Math.pow((user.getLatitude() - message.getLatitude()), 2) + Math.pow((user.getLongitude() - message.getLongitude()), 2) );
+        if (distance < range){
+            return true;
+        }
+        return false;
     }
 
 
