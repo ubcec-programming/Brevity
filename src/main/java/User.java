@@ -32,5 +32,7 @@ public class User {
         }
     }
 
+    public void printwarnings(int range){
 
+    }
 }
