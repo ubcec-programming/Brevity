@@ -10,8 +10,9 @@ public class Tests {
 
     @BeforeClass
     public static void setup(){
-        user1.newMessage("Hellow!");
-
+        user1.newMessage("Hello!");
+        user1.moveTo(20,20);
+        user1.newMessage("Hello2!");
 
 
     }
@@ -19,6 +20,12 @@ public class Tests {
     @Test
     public void testEqual(){
         assertEquals(1, geoMap.getMsgs(user2.getPosition(), 10).size());
+    }
+
+    @Test
+    public void testEqual2(){
+        user2.moveTo(-20,-20);
+        assertEquals(0, geoMap.getMsgs(user2.getPosition(), 10).size());
     }
 
 
