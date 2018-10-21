@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Scanner;
 
 public class Message {
 
@@ -11,5 +12,9 @@ public class Message {
         this.containt = containt;
         this.position = position;
         this.owner = owner;
+    }
+
+    private List<String> getTags (){
+
     }
 }

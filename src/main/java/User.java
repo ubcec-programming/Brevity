@@ -15,7 +15,7 @@ public class User {
     }
 
     public void newMessage(String msg){
-        Message message = new Message(msg, new PositionPair(latitude, longitude));
+        Message message = new Message(msg, new PositionPair(latitude, longitude), this);
     }
 
     public List<Message> getMessage() {

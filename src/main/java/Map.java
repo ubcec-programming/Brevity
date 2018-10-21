@@ -5,6 +5,4 @@ public class Map {
 
     }
 
-    position
-
 }
