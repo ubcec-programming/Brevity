@@ -12,9 +12,18 @@ public class Message {
         this.containt = containt;
         this.position = position;
         this.owner = owner;
+        this.getTags();
     }
 
-    private List<String> getTags (){
+    private void getTags (){
+        Scanner tagScanner = new Scanner(containt);
+        String nextWord;
 
+        while (tagScanner.hasNext()){
+            nextWord = tagScanner.next();
+            if (nextWord.charAt(0) == '#'){
+                tags.add(nextWord);
+            }
+        }
     }
 }
