@@ -28,5 +28,10 @@ public class Tests {
         assertEquals(0, geoMap.getMsgs(user2.getPosition(), 10).size());
     }
 
+    @Test
+    public void testEqual3(){
+        assertEquals(2, geoMap.getMsgs(user2.getPosition(), 100).size());
+    }
+
 
 }
