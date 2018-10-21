@@ -3,7 +3,7 @@ import java.util.List;
 
 public class geoMap {
     // creates a preset map with doubles: latitude and longitude
-    public static List<Message> msgList;
+    public static List<Message> msgList = new ArrayList<>();
 
     public static void storeMsg(Message msg){
         msgList.add(msg);
