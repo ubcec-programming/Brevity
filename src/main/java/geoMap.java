@@ -5,11 +5,11 @@ public class geoMap {
     // creates a preset map with doubles: latitude and longitude
     public static List<Message> msgList;
 
-    public void storeMsg(Message msg){
+    public static void storeMsg(Message msg){
         msgList.add(msg);
     }
 
-    public List<Message> getMsgs(PositionPair user, int range){
+    public static List<Message> getMsgs(PositionPair user, int range){
         List<Message> localMsgs = new ArrayList<>();
         for (int x = 0; x < msgList.size(); x++){
             if (withinRange(user, msgList.get(x).getPosition(), range)){
@@ -19,7 +19,7 @@ public class geoMap {
         return localMsgs;
     }
 
-    private boolean withinRange(PositionPair user, PositionPair message, int range){
+    private static boolean withinRange(PositionPair user, PositionPair message, int range){
         double distance = Math.sqrt( Math.pow((user.getLatitude() - message.getLatitude()), 2) + Math.pow((user.getLongitude() - message.getLongitude()), 2) );
         if (distance < range){
             return true;

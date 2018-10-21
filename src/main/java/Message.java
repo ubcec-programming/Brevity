@@ -20,7 +20,7 @@ public class Message {
 
     public String toString (){
         String result;
-        //result = owner.getUserName() + ": " + "\n" + containt;
+        result = owner.getUsername() + ": " + "\n" + containt;
         return result;
     }
 

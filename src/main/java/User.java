@@ -1,29 +1,35 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
-    private PositionPair position;
+    private PositionPair currentLocation;
     private String username;
-    private int range;
 //    private List<Message> message=new ArrayList<>();
 
     public User(PositionPair position, String username, int range) {
-        this.position = position;
+        this.currentLocation = position;
         this.username = username;
-        this.range = range;
     }
 
     public PositionPair getPosition() {
-        return position;
+        return currentLocation;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public int getRange() {
-        return range;
+    public void newMessage(String msg){
+        Message message = new Message(msg, currentLocation, this);
+        geoMap.storeMsg(message);
+
     }
 
-    public void newMessage(String msg){
-        Message message = new Message(msg, position, this);
+    public void printMessages(int range){
+        List<Message> inRange = new ArrayList<>(geoMap.getMsgs(this.currentLocation, range));
+        for (int i = 0; i < inRange.size(); i++){
+            System.out.println(inRange.get(i).toString());
+        }
     }
 
 
