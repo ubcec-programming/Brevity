@@ -11,14 +11,17 @@ import static org.junit.Assert.*;
 public class msgMapTestPublic {
     @BeforeClass
     public static void setup(){
-        User owner =
+        User user1 = new User(new PositionPair(1.0, 1.0), "Ben", 10);
+        user1.newMessage("Hellow!");
+
+        User user2 = new User(new PositionPair(1.0, 2.0), "Harry", 10);
 
 
     }
 
     @Test
     public void testEqual(){
-        assertEquals(true, ));
+        assertEquals(true, true);
     }
 
 
