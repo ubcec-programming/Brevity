@@ -1,5 +1,3 @@
-
-
 public class User {
     private PositionPair position;
     private String username;
@@ -12,11 +10,21 @@ public class User {
         this.range = range;
     }
 
+    public PositionPair getPosition() {
+        return position;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public int getRange() {
+        return range;
+    }
+
     public void newMessage(String msg){
         Message message = new Message(msg, position, this);
     }
 
-    public List<Message> getMessage() {
-        return message;
-    }
+
 }
