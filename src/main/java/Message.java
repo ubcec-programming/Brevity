@@ -7,7 +7,7 @@ public class Message {
     private String containt;
     private PositionPair position;
     private User owner;
-    private List<String> tags;
+    private List<String> tags = new ArrayList<>();
 
     public Message (String containt, PositionPair position, User owner){
         this.containt = containt;
