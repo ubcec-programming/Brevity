@@ -1,4 +1,4 @@
-public class PositionPair extends geoMap {
+public class PositionPair {
 
     private double latitude, longitude;
 

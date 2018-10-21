@@ -10,16 +10,6 @@ public class Map {
 
 
     }
-    /**
-     * Create a new Location given a latitude and longitude pair
-     *
-     * @param latitude not null, between -100 and 100
-     * @param longitude not null, between -100 and 100
-     */
-    public void PositionPair(double latitude, double longitude) {
-        this.latitude = latitude;
-        this.longitude = longitude;
-    }
 
     public void msgLocation(PositionPair coordinates, String message){
         Map<PositionPair, String> location = new HashMap<PositionPair, String>();
@@ -28,9 +18,11 @@ public class Map {
     }
 
     public String[] getMsgs(PositionPair user, int range){
-
+        String[] allMesgs = new String[];
         for (int x = 0; x < keyList.length; x++){
             if (withinRange(user, keyList.get(x), range)){
+                allMsgs.add( );
+
 
             }
         }
