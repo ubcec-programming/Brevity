@@ -1,7 +1,7 @@
 
 
 public class User {
-    private double PositionPair position;
+    private PositionPair position;
     private String username;
     private int range;
 //    private List<Message> message=new ArrayList<>();
