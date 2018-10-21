@@ -11,6 +11,18 @@ public class geoMap {
 
     public static List<Message> getMsgs(PositionPair user, int range){
         List<Message> localMsgs = new ArrayList<>();
+
+        for (int x = 0; x < msgList.size(); x++){
+            if (withinRange(user, msgList.get(x).getPosition(), range)){
+                localMsgs.add( msgList.get(x));
+            }
+        }
+        return localMsgs;
+    }
+
+    public static List<Message> getTaggedMsgs(PositionPair user, int range){
+        List<Message> localMsgs = new ArrayList<>();
+
         for (int x = 0; x < msgList.size(); x++){
             if (withinRange(user, msgList.get(x).getPosition(), range)){
                 localMsgs.add( msgList.get(x));
