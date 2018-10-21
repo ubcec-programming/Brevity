@@ -4,11 +4,20 @@ import java.util.List;
 public class User {
     private PositionPair currentLocation;
     private String username;
-//    private List<Message> message=new ArrayList<>();
+    private int range;
 
-    public User(PositionPair position, String username) {
+    public User(PositionPair position, String username, int range) {
         this.currentLocation = position;
         this.username = username;
+        this.range = range;
+    }
+
+    public void moveTo (int newLat, int newLong){
+        this.currentLocation = new PositionPair(newLat, newLong);
+    }
+
+    public void setRange(int range){
+        this.range = range;
     }
 
     public PositionPair getPosition() {
@@ -25,7 +34,7 @@ public class User {
 
     }
 
-    public boolean printMessages(int range){
+    public boolean printMessages(){
         List<Message> inRange = new ArrayList<>(geoMap.getMsgs(this.currentLocation, range));
         for (int i = 0; i < inRange.size(); i++){
             System.out.println(inRange.get(i).toString());
@@ -36,7 +45,7 @@ public class User {
         } else {return false;}
     }
 
-    public boolean printWarnings(int range){
+    public boolean printWarnings(){
         List<Message> inRange = new ArrayList<>(geoMap.getMsgs(this.currentLocation, range));
         Boolean haveWarnings = false;
 
