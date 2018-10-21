@@ -15,6 +15,8 @@ public class Message {
         this.getTags();
     }
 
+    public PositionPair getPosition(){return position;}
+
     private void getTags (){
         Scanner tagScanner = new Scanner(containt);
         String nextWord;
