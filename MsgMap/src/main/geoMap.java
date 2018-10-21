@@ -26,7 +26,7 @@ public class geoMap {
         location.put(coordinates, message);
     }
 
-    public String[] getMsg(PositionPair coordinates, int range){
+    public String[] getMsgs(Location coordinates, int range){
         //for ()
         float distanceInMeters = coordinates.distanceTo(test);
         boolean isWithinRange = distanceInMeters < range;
@@ -35,6 +35,12 @@ public class geoMap {
         Location.distanceBetween(centerLatitude, centerLongitude, testLatitude, testLongitude, results);
         float distanceInMeters = results[0];
         boolean isWithin10km = distanceInMeters < 10000;
+
+    }
+
+    private boolean withinRange(PositionPair user, PositionPair message, int range){
+        Math.sqrt((user.getLatitude() - message.getLatitude()) * (user.getLatitude() - message.getLatitude()) +
+                (user.getLongitude() - message.getLongitude()) * (user.getLatitude() - message.getLatitude());
 
     }
 
