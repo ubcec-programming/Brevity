@@ -1,7 +1,20 @@
+import java.util.List;
+import java.util.Scanner;
+
 public class Message {
+
     private String containt;
     private PositionPair position;
-    private String owner;
+    private User owner;
+    private List<String> tags;
 
-    public Message (String containt, PositionPair)
+    public Message (String containt, PositionPair position, User owner){
+        this.containt = containt;
+        this.position = position;
+        this.owner = owner;
+    }
+
+    private List<String> getTags (){
+
+    }
 }
