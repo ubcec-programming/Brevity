@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 public class Tests {
     private static User user1 = new User(new PositionPair(1.0, 1.0), "Ben", 10);
-    private static User user2 = new User(new PositionPair(0.0, 0.0), "Harry", 10);
+    private static User user2 = new User(new PositionPair(0.0, 0.0), "Jerry", 10);
 
 
     @BeforeClass
@@ -14,24 +14,28 @@ public class Tests {
         user1.moveTo(50,20);
         user1.newMessage("5.6 magnitude earthquake #Warning");
         user1.moveTo(50,25);
-
-
+        user1.newMessage("Purple prepubescent potatoes");
     }
 
     @Test
-    public void testEqual(){
+    public void testl(){
         user2.printMessages();
     }
 
     @Test
-    public void testEqual2(){
+    public void test2(){
         user2.moveTo(-20,-20);
-        assertEquals(0, geoMap.getMsgs(user2.getPosition(), 10).size());
+        user2.printMessages();
     }
 
     @Test
-    public void testEqual3(){
-        assertEquals(2, geoMap.getMsgs(user2.getPosition(), 100).size());
+    public void test3(){
+        user1.printMessages();
+    }
+
+    @Test
+    public void test4(){
+        user1.printWarnings();
     }
 
 
