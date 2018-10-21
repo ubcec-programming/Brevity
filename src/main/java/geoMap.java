@@ -6,7 +6,6 @@ import java.util.List;
 
 public class geoMap {
     // creates a preset map with doubles: latitude and longitude
-    public double latitude, longitude;
     public List<PositionPair> keyList;
     public Map<PositionPair, String> location;
 
@@ -17,7 +16,6 @@ public class geoMap {
     }
 
     public void storeMsg(Message msg){
-        //Map<PositionPair, String> location = new HashMap<>();
         location.put(msg.getPosition(), msg.toString());
         keyList.add(msg.getPosition());
     }
