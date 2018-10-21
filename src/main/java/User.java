@@ -32,7 +32,7 @@ public class User {
         }
     }
 
-    public void printwarnings(int range){
+    public void printWarnings(int range){
         List<Message> inRange = new ArrayList<>(geoMap.getMsgs(this.currentLocation, range));
         Boolean haveWarnings = false;
 
